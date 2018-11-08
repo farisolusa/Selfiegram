@@ -87,6 +87,6 @@ class SelfieStoreTests: XCTestCase {
         
         // Assert
         XCTAssertEqual(allSelfies.count - 1, selfieList.count, "There should be one less selfie after deletion")
-        XCTAssertNotNil(loadedSelfie, "Deleted selfie should be nil")
+        XCTAssertNil(loadedSelfie, "Deleted selfie should be nil")
     }
 }
