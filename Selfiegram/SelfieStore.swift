@@ -37,30 +37,51 @@ enum SelfieStoreError: Error {
 final class SelfieStore {
     static let shared = SelfieStore()
     
+    /*
+     “will return the image associated with a particular selfie’s id, or nil if it can’t find one.”
+    */
     func getImage(id: UUID) -> UIImage? {
         return nil
     }
     
+    /*
+     “will save the image to disk using the id passed in to associate it back with a selfie.”
+    */
     func setImage(id: UUID, image: UIImage?) throws {
         throw SelfieStoreError.cannotSaveImage(image)
     }
     
+    /*
+     “will return an array of every selfie in the store.”
+    */
     func listSelfies() throws -> [Selfie] {
         return []
     }
     
+    /*
+     “will delete the selfie and its associated image. It does this by calling the other delete function and using the selfie’s id.”
+    */
     func delete(selfie: Selfie) throws {
         throw SelfieStoreError.cannotSaveImage(nil)
     }
     
+    /*
+     “will delete the selfie (and its associated image) that matches the id parameter.”
+    */
     func delete(id: UUID) throws {
         throw SelfieStoreError.cannotSaveImage(nil)
     }
     
+    /*
+     “will load the selfie that matches the id from disk.”
+    */
     func load(id: UUID) -> Selfie? {
         return nil
     }
     
+    /*
+     “will save the passed-in selfie to disk.”
+    */
     func save(selfie: Selfie) throws {
         throw SelfieStoreError.cannotSaveImage(nil)
     }
