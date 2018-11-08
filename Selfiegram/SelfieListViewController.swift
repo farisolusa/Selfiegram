@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  SelfieListViewController.swift
 //  Selfiegram
 //
 //  Created by Anil Prasad on 11/7/18.
@@ -13,6 +13,13 @@ class SelfieListViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var selfies: [Selfie] = []
 
+    let timeIntervalFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .spellOut
+        formatter.maximumUnitCount = 1
+        return formatter
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +70,15 @@ class SelfieListViewController: UITableViewController {
 
         let selfie = selfies[indexPath.row]
         cell.textLabel?.text = selfie.title
+        
+        // Setup its time ago sublabel
+        if let interval = timeIntervalFormatter.string(from: selfie.created, to: Date()) {
+            cell.detailTextLabel?.text = "\(interval) ago"
+        } else {
+            cell.detailTextLabel?.text = nil
+        }
+        cell.imageView?.image = selfie.image
+        
         return cell
     }
 

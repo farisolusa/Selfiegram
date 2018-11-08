@@ -53,7 +53,7 @@ final class SelfieStore {
         if let image = imageCache[id] {
             return image
         }
-        let imageURL = documentsFolder.appendingPathComponent("(id.uuidString)-image.jpg")
+        let imageURL = documentsFolder.appendingPathComponent("\(id.uuidString)-image.jpg")
         
         guard let imageData = try? Data(contentsOf: imageURL) else {
             return nil
