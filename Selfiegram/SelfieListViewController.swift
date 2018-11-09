@@ -10,7 +10,7 @@ import UIKit
 
 class SelfieListViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: SelfieDetailViewController? = nil
     var selfies: [Selfie] = []
 
     let timeIntervalFormatter: DateComponentsFormatter = {
@@ -35,7 +35,7 @@ class SelfieListViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count - 1]
                 as? UINavigationController)?.topViewController
-                as? DetailViewController
+                as? SelfieDetailViewController
         }
         
         let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewSelfie))
@@ -69,7 +69,18 @@ class SelfieListViewController: UITableViewController {
     }
 
  
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let selfie = selfies[indexPath.row]
+                if let controller = (segue.destination as? UINavigationController)?.topViewController as? SelfieDetailViewController {
+                    controller.selfie = selfie
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                }
+            }
+        }
+    }
 
 
     // MARK: - Table View

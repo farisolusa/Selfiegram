@@ -47,7 +47,7 @@ class SelfieStoreTests: XCTestCase {
         let newSelfie = Selfie(title: "Selfie with image test")
         
         // Act
-        newSelfie.image = createImage(text: "💯")
+        newSelfie.image = createImage(text: "🤪")
         try SelfieStore.shared.save(selfie: newSelfie)
         
         // Assert
