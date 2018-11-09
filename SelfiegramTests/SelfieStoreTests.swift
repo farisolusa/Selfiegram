@@ -34,7 +34,7 @@ class SelfieStoreTests: XCTestCase {
         
         let allSelfies = try! SelfieStore.shared.listSelfies()
         
-        guard let theSelfie = allSelfies.first(where: {$0.id == newSelfie.id}) else {
+        guard allSelfies.first(where: {$0.id == newSelfie.id}) != nil else {
             XCTFail("Selfies list should contain the one we just created.")
             return
         }
