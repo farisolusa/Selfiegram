@@ -120,11 +120,51 @@ class SelfieListViewController: UITableViewController {
         }
     }
 
-   
+    /*
+    Called after the user has selected a photo
+    */
+    func newSelfieTaken(image: UIImage) {
+        // Create a new image
+        let newSelfie = Selfie(title: "New Selfie")
+        // Store the image
+        newSelfie.image = image
+        
+        // Attempt to save the photo
+        do {
+            try SelfieStore.shared.save(selfie: newSelfie)
+        } catch {
+            showError(message: "Can't save photo: \(error)")
+            return
+        }
+        
+        // Insert this photo into this view controller's list
+        selfies.insert(newSelfie, at: 0)
+        
+        // Update the tableView to show the new Photo
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
 
 
 }
 
 extension SelfieListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+            ?? info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+                let message = "Could not get a picture from the image picker!"
+                showError(message: message)
+                return
+        }
+        
+        self.newSelfieTaken(image: image)
+        
+        // Get rid of the viewController
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
