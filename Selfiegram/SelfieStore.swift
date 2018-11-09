@@ -54,7 +54,7 @@ final class SelfieStore {
             return image
         }
         let imageURL = documentsFolder.appendingPathComponent("\(id.uuidString)-image.jpg")
-        
+        //print("Document Directory: \(imageURL)")
         guard let imageData = try? Data(contentsOf: imageURL) else {
             return nil
         }
