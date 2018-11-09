@@ -37,6 +37,23 @@ class SelfieListViewController: UITableViewController {
                 as? UINavigationController)?.topViewController
                 as? DetailViewController
         }
+        
+        let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewSelfie))
+        navigationItem.rightBarButtonItem = addSelfieButton
+    }
+    
+    @objc func createNewSelfie() {
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+            if UIImagePickerController.isCameraDeviceAvailable(.front) {
+                imagePicker.cameraDevice = .front
+            }
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     func showError(message: String) {
@@ -108,3 +125,6 @@ class SelfieListViewController: UITableViewController {
 
 }
 
+extension SelfieListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+}
