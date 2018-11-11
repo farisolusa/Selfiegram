@@ -48,7 +48,29 @@ class SelfieDetailViewController: UIViewController {
         
         configureView()
     }
+    
+    
 
+    @IBAction func doneButtonTapped(_ sender: Any) { // Added on UITextField "Primary Action Triggered"
+        selfieNameField.resignFirstResponder()
+        
+        guard let selfie = selfie else {
+            return
+        }
+        
+        guard let text = self.selfieNameField.text else {
+            return
+        }
+        
+        selfie.title = text
+        
+        do {
+            try SelfieStore.shared.save(selfie: selfie)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
     
 
 
