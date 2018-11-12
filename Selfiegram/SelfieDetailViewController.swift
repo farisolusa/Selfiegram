@@ -81,7 +81,21 @@ class SelfieDetailViewController: UIViewController {
         
     }
     
-
+    @IBAction func expandMap(_ sender: Any) {
+        if let coordinate = self.selfie?.position?.loaction {
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: coordinate.coordinate),
+                MKLaunchOptionsMapTypeKey: NSNumber(value: MKMapType.mutedStandard.rawValue)
+            ]
+            
+            let placemark = MKPlacemark(coordinate: coordinate.coordinate, addressDictionary: nil)
+            let item = MKMapItem(placemark: placemark)
+            item.name = selfie?.title
+            
+            item.openInMaps(launchOptions: options)
+        }
+    }
+    
 
 }
 
