@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit.UIImage
+import CoreLocation.CLLocation
 
 class Selfie: Codable {
     let created: Date
@@ -27,6 +28,33 @@ class Selfie: Codable {
         self.title = title
         self.created = Date()
         self.id = UUID()
+    }
+    
+    struct Coordinate: Codable, Equatable {
+        var latitude: Double
+        var longitude: Double
+        
+        // Required equality method to conform to the Equatable protocol
+        public static func == (lhs: Selfie.Coordinate,
+                               rhs: Selfie.Coordinate) -> Bool {
+            return lhs.latitude == lhs.latitude &&
+                rhs.longitude == rhs.longitude
+        }
+        
+        var loaction: CLLocation {
+            get {
+                return CLLocation(latitude: self.latitude,
+                                  longitude: self.longitude)
+            } set {
+                self.latitude = newValue.coordinate.latitude
+                self.longitude = newValue.coordinate.longitude
+            }
+        }
+        
+        init(location: CLLocation) {
+            self.latitude = location.coordinate.latitude
+            self.longitude = location.coordinate.longitude
+        }
     }
 }
 
