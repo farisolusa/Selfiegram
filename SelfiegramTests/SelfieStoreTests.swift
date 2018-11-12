@@ -9,6 +9,7 @@
 import XCTest
 @testable import Selfiegram
 import UIKit
+import CoreLocation
 
 class SelfieStoreTests: XCTestCase {
 
@@ -88,5 +89,31 @@ class SelfieStoreTests: XCTestCase {
         // Assert
         XCTAssertEqual(allSelfies.count - 1, selfieList.count, "There should be one less selfie after deletion")
         XCTAssertNil(loadedSelfie, "Deleted selfie should be nil")
+    }
+    
+    func testLocationServices() {
+        // a location for Hobart
+        let location = CLLocation(latitude: -42.8819, longitude: 147.3238)
+        
+        // a new selfie with an image
+        let newSelfie = Selfie(title: "Location Selfie")
+        let newImage = createImage(text: "⛑")
+        newSelfie.image = newImage
+        
+        // storing a location to this selfie
+        newSelfie.position = Selfie.Coordinate(location: location)
+        
+        // saving the selfie with the location
+        do {
+            try SelfieStore.shared.save(selfie: newSelfie)
+        } catch {
+            XCTFail("Failed to save the selfie with location")
+        }
+        
+        // Locading the selfir back from the store
+        let loadedSelfie = SelfieStore.shared.load(id: newSelfie.id)
+        
+        XCTAssertNotNil(loadedSelfie?.position)
+        XCTAssertEqual(newSelfie.position, loadedSelfie?.position)
     }
 }

@@ -14,6 +14,7 @@ class Selfie: Codable {
     let created: Date
     let id: UUID
     var title = "New Selfie!"
+    var position: Coordinate?
     
     var image: UIImage? {
         get {
