@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class SelfieDetailViewController: UIViewController {
 
     @IBOutlet weak var selfieNameField: UITextField!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var selfieImageView: UIImageView!
+    @IBOutlet weak var mapview: MKMapView!
+    
     
     var selfie: Selfie? {
         didSet {
@@ -41,6 +44,12 @@ class SelfieDetailViewController: UIViewController {
         selfieNameField.text = selfie.title
         dateCreatedLabel.text = dateFormatter.string(from: selfie.created)
         selfieImageView.image = selfie.image
+        
+        // If selfie has embedded location, then show the Map
+        if let position = selfie.position {
+            self.mapview.setCenter(position.loaction.coordinate, animated: false)
+            mapview.isHidden = false
+        }
     }
 
     override func viewDidLoad() {
