@@ -17,6 +17,7 @@
 		263B12C1219228E600310BD6 /* SelfiegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12C0219228E600310BD6 /* SelfiegramTests.swift */; };
 		263B12CC219228E600310BD6 /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12CB219228E600310BD6 /* SelfiegramUITests.swift */; };
 		263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12D921922BEF00310BD6 /* SelfieStore.swift */; };
+		265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		263B12CB219228E600310BD6 /* SelfiegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITests.swift; sourceTree = "<group>"; };
 		263B12CD219228E600310BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263B12D921922BEF00310BD6 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
+		265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				263B12A9219228E500310BD6 /* AppDelegate.swift */,
 				263B12AB219228E500310BD6 /* SelfieListViewController.swift */,
 				263B12AD219228E500310BD6 /* SelfieDetailViewController.swift */,
+				265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */,
 				263B12D921922BEF00310BD6 /* SelfieStore.swift */,
 				263B12AF219228E500310BD6 /* Main.storyboard */,
 				263B12B2219228E600310BD6 /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				263B12AE219228E500310BD6 /* SelfieDetailViewController.swift in Sources */,
+				265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */,
 				263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */,
 				263B12AC219228E500310BD6 /* SelfieListViewController.swift in Sources */,
 				263B12AA219228E500310BD6 /* AppDelegate.swift in Sources */,

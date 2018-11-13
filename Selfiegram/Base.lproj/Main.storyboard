@@ -162,11 +162,78 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Selfies" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Selfies" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="Xae-bv-dt5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BHE-M0-c4B">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                            <connections>
+                                <segue destination="cyl-Mz-2h2" kind="show" id="6oH-SR-WHn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="uNr-7P-bBR">
+            <objects>
+                <tableViewController title="Settings" id="cyl-Mz-2h2" customClass="SettingsTableViewController" customModule="Selfiegram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="74T-Et-y8G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="LcH-pL-NEn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cb9-iI-ekr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cb9-iI-ekr" id="qhX-ti-zam">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-DT-0QD">
+                                                    <rect key="frame" x="16" y="11.5" width="111" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v0G-3h-0ua">
+                                                    <rect key="frame" x="308" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="locationSwitchToggled:" destination="cyl-Mz-2h2" eventType="valueChanged" id="SPT-i3-87F"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="v0G-3h-0ua" secondAttribute="trailing" constant="2" id="1ml-lR-f1E"/>
+                                                <constraint firstItem="v0G-3h-0ua" firstAttribute="centerY" secondItem="3dd-DT-0QD" secondAttribute="centerY" id="65u-GT-zrF"/>
+                                                <constraint firstItem="3dd-DT-0QD" firstAttribute="leading" secondItem="qhX-ti-zam" secondAttribute="leadingMargin" id="6Ol-pG-OWs"/>
+                                                <constraint firstItem="v0G-3h-0ua" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3dd-DT-0QD" secondAttribute="trailing" constant="8" id="DvS-9n-YPg"/>
+                                                <constraint firstItem="3dd-DT-0QD" firstAttribute="centerY" secondItem="qhX-ti-zam" secondAttribute="centerY" id="IEW-du-lW5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cyl-Mz-2h2" id="MPO-8W-YLQ"/>
+                            <outlet property="delegate" destination="cyl-Mz-2h2" id="CjA-ua-wZl"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="locationSwitch" destination="v0G-3h-0ua" id="9LN-Ld-5Gg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C90-lv-XeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
