@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SelfieListViewController: UITableViewController {
 
@@ -20,6 +21,9 @@ class SelfieListViewController: UITableViewController {
         return formatter
     }()
     
+    // stores the last location that CoreLocation was able to determine
+    var lastLocation: CLLocation?
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +44,31 @@ class SelfieListViewController: UITableViewController {
         
         let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewSelfie))
         navigationItem.rightBarButtonItem = addSelfieButton
+        
+        self.locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
     
     @objc func createNewSelfie() {
+        
+        // Clear the last location, so that this next image doesn't end up with an outOfDate location
+        lastLocation = nil
+        
+        // Handle our authorization status
+        switch CLLocationManager.authorizationStatus() {
+        case .denied, .restricted:
+            // We either don't the permission, or the user is not permitted to use location services at all. Give up at this point.
+            return
+        case .notDetermined:
+            // We don't know if we have the permission or not. Ask for it.
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            // We have permission. Nothing to do here.
+            break
+        }
+        
+        locationManager.requestLocation()
+        
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
@@ -141,6 +167,10 @@ class SelfieListViewController: UITableViewController {
         // Store the image
         newSelfie.image = image
         
+        if let location = self.lastLocation {
+            newSelfie.position = Selfie.Coordinate(location: location)
+        }
+        
         // Attempt to save the photo
         do {
             try SelfieStore.shared.save(selfie: newSelfie)
@@ -179,4 +209,14 @@ extension SelfieListViewController: UIImagePickerControllerDelegate, UINavigatio
     }
     
     
+}
+
+extension SelfieListViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.lastLocation = locations.last
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        showError(message: error.localizedDescription)
+    }
 }

@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSCameraUsageDescription</key>
-    <string>We are using the camera to take the selfies</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>We are using the library to save selfies</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We are using the camera to take the selfies</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We are using the library to save selfies</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll use location to add it&apos;s info to the selfies</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
