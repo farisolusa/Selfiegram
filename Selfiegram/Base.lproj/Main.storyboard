@@ -219,6 +219,35 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bVz-Dz-lJb">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVz-Dz-lJb" id="f7s-B7-4Dc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me at 10am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-lO-Gnh">
+                                                    <rect key="frame" x="16" y="11.5" width="151" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-25-A0A">
+                                                    <rect key="frame" x="308" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="reminderSwitchToggled:" destination="cyl-Mz-2h2" eventType="valueChanged" id="k1C-9u-tAC"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Qh-25-A0A" secondAttribute="trailing" constant="2" id="643-p2-7lO"/>
+                                                <constraint firstItem="2Qh-25-A0A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qpB-lO-Gnh" secondAttribute="trailing" constant="8" id="8l2-AF-GcX"/>
+                                                <constraint firstItem="qpB-lO-Gnh" firstAttribute="centerY" secondItem="f7s-B7-4Dc" secondAttribute="centerY" id="ZSN-I5-d56"/>
+                                                <constraint firstItem="qpB-lO-Gnh" firstAttribute="leading" secondItem="f7s-B7-4Dc" secondAttribute="leadingMargin" id="fxY-45-ryV"/>
+                                                <constraint firstItem="2Qh-25-A0A" firstAttribute="centerY" secondItem="qpB-lO-Gnh" secondAttribute="centerY" id="pbW-4x-ixm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -229,6 +258,7 @@
                     </tableView>
                     <connections>
                         <outlet property="locationSwitch" destination="v0G-3h-0ua" id="9LN-Ld-5Gg"/>
+                        <outlet property="reminderSwitch" destination="2Qh-25-A0A" id="jTQ-um-JTi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C90-lv-XeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
