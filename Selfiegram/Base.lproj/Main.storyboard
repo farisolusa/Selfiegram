@@ -168,10 +168,10 @@
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="cyl-Mz-2h2" kind="show" id="nlt-cx-Cf8"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="cyl-Mz-2h2" kind="show" id="6oH-SR-WHn"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

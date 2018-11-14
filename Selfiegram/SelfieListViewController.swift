@@ -54,20 +54,24 @@ class SelfieListViewController: UITableViewController {
         // Clear the last location, so that this next image doesn't end up with an outOfDate location
         lastLocation = nil
         
-        // Handle our authorization status
-        switch CLLocationManager.authorizationStatus() {
-        case .denied, .restricted:
-            // We either don't the permission, or the user is not permitted to use location services at all. Give up at this point.
-            return
-        case .notDetermined:
-            // We don't know if we have the permission or not. Ask for it.
-            locationManager.requestWhenInUseAuthorization()
-        default:
-            // We have permission. Nothing to do here.
-            break
-        }
+        let shouldGetLocation = UserDefaults.standard.bool(forKey: SettingsKey.saveLocation.rawValue)
         
-        locationManager.requestLocation()
+        if shouldGetLocation {
+            // Handle our authorization status
+            switch CLLocationManager.authorizationStatus() {
+            case .denied, .restricted:
+                // We either don't the permission, or the user is not permitted to use location services at all. Give up at this point.
+                return
+            case .notDetermined:
+                // We don't know if we have the permission or not. Ask for it.
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                // We have permission. Nothing to do here.
+                break
+            }
+            
+            locationManager.requestLocation()
+        }
         
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
