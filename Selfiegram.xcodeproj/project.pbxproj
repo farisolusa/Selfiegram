@@ -18,6 +18,7 @@
 		263B12CC219228E600310BD6 /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12CB219228E600310BD6 /* SelfiegramUITests.swift */; };
 		263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12D921922BEF00310BD6 /* SelfieStore.swift */; };
 		265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */; };
+		268C8253219E1C2D00AA5904 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C8252219E1C2D00AA5904 /* CaptureViewController.swift */; };
 		26ED096A219CD0F000151296 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ED0969219CD0F000151296 /* Theme.swift */; };
 		26ED096B219CE80600151296 /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26ED0968219CD0D700151296 /* Lobster_1.3.otf */; };
 		26ED096C219CE80E00151296 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26ED0967219CD0CC00151296 /* Quicksand-Regular.otf */; };
@@ -58,6 +59,7 @@
 		263B12CD219228E600310BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263B12D921922BEF00310BD6 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
 		265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		268C8252219E1C2D00AA5904 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		26ED0966219CD0BB00151296 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		26ED0967219CD0CC00151296 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		26ED0968219CD0D700151296 /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				263B12AB219228E500310BD6 /* SelfieListViewController.swift */,
 				263B12AD219228E500310BD6 /* SelfieDetailViewController.swift */,
 				265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */,
+				268C8252219E1C2D00AA5904 /* CaptureViewController.swift */,
 				263B12D921922BEF00310BD6 /* SelfieStore.swift */,
 				26ED0969219CD0F000151296 /* Theme.swift */,
 				263B12AF219228E500310BD6 /* Main.storyboard */,
@@ -291,6 +294,7 @@
 			files = (
 				263B12AE219228E500310BD6 /* SelfieDetailViewController.swift in Sources */,
 				265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */,
+				268C8253219E1C2D00AA5904 /* CaptureViewController.swift in Sources */,
 				263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */,
 				26ED096A219CD0F000151296 /* Theme.swift in Sources */,
 				263B12AC219228E500310BD6 /* SelfieListViewController.swift in Sources */,
@@ -470,7 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
@@ -478,9 +482,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.Selfiegram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.a1debug.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
+				PROVISIONING_PROFILE_SPECIFIER = com.a1debug.debug.E.Development.Profile2;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,7 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
@@ -498,9 +502,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.Selfiegram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.a1debug.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
+				PROVISIONING_PROFILE_SPECIFIER = com.a1debug.debug.E.Development.Profile2;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

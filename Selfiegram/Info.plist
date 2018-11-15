@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>We are using the camera to take the selfies</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We are using the library to save selfies</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We&apos;ll use location to add it&apos;s info to the selfies</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Quicksand-Regular.otf</string>
-		<string>Lobster_1.3.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -31,6 +20,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We are using the camera to take the selfies</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We'll use location to add it's info to the selfies</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We are using the library to save selfies</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Quicksand-Regular.otf</string>
+		<string>Lobster_1.3.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
