@@ -21,7 +21,7 @@ struct Theme {
             return
         }
         
-        let tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        let tintColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         UIApplication.shared.delegate?.window??.tintColor = tintColor
         
         let navBarLabel = UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self])
