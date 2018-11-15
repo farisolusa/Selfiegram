@@ -75,6 +75,7 @@ class SettingsTableViewController: UITableViewController {
         
         // A trigger that goes off at this time, everyday
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false) // TEST CODE
         
         // Create the request
         let request = UNNotificationRequest(identifier: self.notificationId, content: content, trigger: trigger)
