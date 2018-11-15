@@ -87,7 +87,13 @@
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Selfie" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Selfie" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="CeI-7A-RRX">
+                            <connections>
+                                <action selector="sharedSelfie:" destination="JEX-9P-axG" id="WcE-98-UvC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="Ah7-BN-uN3" id="uh4-LA-Zmz"/>
                         <outlet property="mapview" destination="GGt-ni-ghF" id="9Gr-NM-g3Y"/>
