@@ -202,6 +202,7 @@ class SelfieListViewController: UITableViewController {
             do {
                 try SelfieStore.shared.delete(selfie: selfieToRemove)
                 // Remove it from that array
+                self.selfies.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch {
                 self.showError(message: "Failed to delete \(selfieToRemove.title)")

@@ -296,45 +296,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8E-S4-Aft" customClass="PreviewView" customModule="Selfiegram" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3S7-eh-8SX">
-                                        <rect key="frame" x="0.0" y="563" width="375" height="40"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JyD-Vb-JNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to take a selfie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-m8-NvK">
-                                                    <rect key="frame" x="116" y="9.5" width="143" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="SuL-m8-NvK" firstAttribute="centerX" secondItem="JyD-Vb-JNQ" secondAttribute="centerX" id="D0t-2K-YHC"/>
-                                                <constraint firstItem="SuL-m8-NvK" firstAttribute="centerY" secondItem="JyD-Vb-JNQ" secondAttribute="centerY" id="zQA-Qf-IO3"/>
-                                            </constraints>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="jtN-JL-LOE"/>
-                                        </constraints>
-                                        <blurEffect style="dark"/>
-                                    </visualEffectView>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="3S7-eh-8SX" secondAttribute="trailing" id="Ayh-Sv-cF4"/>
-                                    <constraint firstAttribute="bottom" secondItem="3S7-eh-8SX" secondAttribute="bottom" id="O2g-Z7-q1b"/>
-                                    <constraint firstItem="3S7-eh-8SX" firstAttribute="leading" secondItem="a8E-S4-Aft" secondAttribute="leading" id="gCR-FR-tRR"/>
-                                </constraints>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Nkp-0c-4WU" appends="YES" id="poP-aM-bht"/>
+                                </connections>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3S7-eh-8SX">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JyD-Vb-JNQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to take a selfie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-m8-NvK">
+                                            <rect key="frame" x="116" y="9.5" width="143" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SuL-m8-NvK" firstAttribute="centerX" secondItem="JyD-Vb-JNQ" secondAttribute="centerX" id="D0t-2K-YHC"/>
+                                        <constraint firstItem="SuL-m8-NvK" firstAttribute="centerY" secondItem="JyD-Vb-JNQ" secondAttribute="centerY" id="zQA-Qf-IO3"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jtN-JL-LOE"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3S7-eh-8SX" firstAttribute="leading" secondItem="eli-wU-WfK" secondAttribute="leading" id="23N-km-Oy9"/>
+                            <constraint firstItem="eli-wU-WfK" firstAttribute="bottom" secondItem="3S7-eh-8SX" secondAttribute="bottom" id="E8i-tY-IzF"/>
                             <constraint firstItem="a8E-S4-Aft" firstAttribute="leading" secondItem="eli-wU-WfK" secondAttribute="leading" id="IVq-05-DZP"/>
                             <constraint firstItem="a8E-S4-Aft" firstAttribute="trailing" secondItem="eli-wU-WfK" secondAttribute="trailing" id="JWp-J6-qkJ"/>
-                            <constraint firstItem="a8E-S4-Aft" firstAttribute="top" secondItem="eli-wU-WfK" secondAttribute="top" id="mJq-SD-Jw8"/>
+                            <constraint firstItem="a8E-S4-Aft" firstAttribute="top" secondItem="YaN-MO-rUB" secondAttribute="top" id="mJq-SD-Jw8"/>
+                            <constraint firstItem="3S7-eh-8SX" firstAttribute="trailing" secondItem="eli-wU-WfK" secondAttribute="trailing" id="nq8-59-Sxk"/>
                             <constraint firstItem="a8E-S4-Aft" firstAttribute="bottom" secondItem="eli-wU-WfK" secondAttribute="bottom" id="tQS-yq-Vza"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eli-wU-WfK"/>
@@ -351,9 +351,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbb-aF-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="7X9-yN-5cX">
+                <tapGestureRecognizer id="Nkp-0c-4WU">
                     <connections>
-                        <action selector="takeSelfie:" destination="ZiX-Eb-3Oh" id="uOP-pS-Vup"/>
+                        <action selector="takeSelfie:" destination="ZiX-Eb-3Oh" id="Qee-xt-ccc"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
