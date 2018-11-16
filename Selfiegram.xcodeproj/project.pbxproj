@@ -474,7 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
@@ -482,9 +482,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.a1debug.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.Selfie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.a1debug.debug.E.Development.Profile2;
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,7 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
@@ -502,9 +502,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.a1debug.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.Selfie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.a1debug.debug.E.Development.Profile2;
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
