@@ -73,6 +73,7 @@ class SelfieListViewController: UITableViewController {
             locationManager.requestLocation()
         }
         
+        /*
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
@@ -84,6 +85,22 @@ class SelfieListViewController: UITableViewController {
         }
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+        */
+        
+        guard let navigation = self.storyboard?.instantiateViewController(withIdentifier: "CaptureScene") as? UINavigationController,
+        let capture = navigation.viewControllers.first as? CaptureViewController else {
+            fatalError("Failed to create the capture view controllers")
+        }
+        
+        capture.complition = {(image: UIImage?) in
+            if let image = image {
+                self.newSelfieTaken(image: image)
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        self.present(navigation, animated: true, completion: nil)
     }
     
     func showError(message: String) {
@@ -224,6 +241,7 @@ class SelfieListViewController: UITableViewController {
 
 }
 
+/*
 extension SelfieListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
@@ -245,6 +263,7 @@ extension SelfieListViewController: UIImagePickerControllerDelegate, UINavigatio
     
     
 }
+*/
 
 extension SelfieListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

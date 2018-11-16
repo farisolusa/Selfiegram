@@ -112,7 +112,6 @@ class CaptureViewController: UIViewController {
         self.complition?(nil)
     }
     
-    #warning ("Not attached to any action")
     @IBAction func takeSelfie(_ sender: Any) {
         // Get a connection to the output
         guard let videoConnection = photoOutput.connection(with: AVMediaType.video) else {
