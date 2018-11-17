@@ -57,8 +57,8 @@ class CaptureViewController: UIViewController {
         
         orientationMap = [
             .portrait: .portrait,
-            .landscapeLeft: .landscapeLeft,
-            .landscapeRight: .landscapeRight,
+            .landscapeLeft: .landscapeRight,
+            .landscapeRight: .landscapeLeft,
             .portraitUpsideDown: .portraitUpsideDown
         ]
         
