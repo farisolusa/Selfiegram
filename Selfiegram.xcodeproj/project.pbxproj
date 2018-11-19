@@ -19,6 +19,7 @@
 		263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B12D921922BEF00310BD6 /* SelfieStore.swift */; };
 		265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */; };
 		268C8253219E1C2D00AA5904 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C8252219E1C2D00AA5904 /* CaptureViewController.swift */; };
+		26E752FC219F9B930044E7CD /* OverlayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E752FB219F9B930044E7CD /* OverlayStore.swift */; };
 		26ED096A219CD0F000151296 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ED0969219CD0F000151296 /* Theme.swift */; };
 		26ED096B219CE80600151296 /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26ED0968219CD0D700151296 /* Lobster_1.3.otf */; };
 		26ED096C219CE80E00151296 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26ED0967219CD0CC00151296 /* Quicksand-Regular.otf */; };
@@ -60,6 +61,7 @@
 		263B12D921922BEF00310BD6 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
 		265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		268C8252219E1C2D00AA5904 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		26E752FB219F9B930044E7CD /* OverlayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStore.swift; sourceTree = "<group>"; };
 		26ED0966219CD0BB00151296 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		26ED0967219CD0CC00151296 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		26ED0968219CD0D700151296 /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
@@ -114,13 +116,13 @@
 		263B12A8219228E500310BD6 /* Selfiegram */ = {
 			isa = PBXGroup;
 			children = (
+				26E752FA219F9B740044E7CD /* Stores */,
 				26ED0965219CD05B00151296 /* Fonts */,
 				263B12A9219228E500310BD6 /* AppDelegate.swift */,
 				263B12AB219228E500310BD6 /* SelfieListViewController.swift */,
 				263B12AD219228E500310BD6 /* SelfieDetailViewController.swift */,
 				265EEB29219B8B5B00ABA9F8 /* SettingsTableViewController.swift */,
 				268C8252219E1C2D00AA5904 /* CaptureViewController.swift */,
-				263B12D921922BEF00310BD6 /* SelfieStore.swift */,
 				26ED0969219CD0F000151296 /* Theme.swift */,
 				263B12AF219228E500310BD6 /* Main.storyboard */,
 				263B12B2219228E600310BD6 /* Assets.xcassets */,
@@ -147,6 +149,15 @@
 				263B12CD219228E600310BD6 /* Info.plist */,
 			);
 			path = SelfiegramUITests;
+			sourceTree = "<group>";
+		};
+		26E752FA219F9B740044E7CD /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				263B12D921922BEF00310BD6 /* SelfieStore.swift */,
+				26E752FB219F9B930044E7CD /* OverlayStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 		26ED0965219CD05B00151296 /* Fonts */ = {
@@ -296,6 +307,7 @@
 				265EEB2A219B8B5B00ABA9F8 /* SettingsTableViewController.swift in Sources */,
 				268C8253219E1C2D00AA5904 /* CaptureViewController.swift in Sources */,
 				263B12DA21922BEF00310BD6 /* SelfieStore.swift in Sources */,
+				26E752FC219F9B930044E7CD /* OverlayStore.swift in Sources */,
 				26ED096A219CD0F000151296 /* Theme.swift in Sources */,
 				263B12AC219228E500310BD6 /* SelfieListViewController.swift in Sources */,
 				263B12AA219228E500310BD6 /* AppDelegate.swift in Sources */,
