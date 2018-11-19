@@ -85,10 +85,29 @@ class DataLoadingTests: XCTestCase {
         XCTAssertNotEqual(availableOverlays.count, 0)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testDownloadedOverlaysAreCached() {
+        // Arrange
+        let downloadingOverlayManager = OverlayManager()
+        let downloadExpectation = self.expectation(description: "Data downloaded")
+        
+        // Start downloading
+        downloadingOverlayManager.loadOverlayAssets(refresh: true) {
+            downloadExpectation.fulfill()
+        }
+        
+        // Wait for download to finish
+        waitForExpectations(timeout: 10.0, handler: nil)
+        
+        // Act
+        // Simulate the overlay manager starting up by initializing a new one; it will access the same files that were downloaded earlier
+        let cacheTestOverlayManager = OverlayManager()
+        
+        // Assert
+        // This overlay manager should see the cached data
+        XCTAssertNotEqual(cacheTestOverlayManager.availableOverlays().count, 0)
+        XCTAssertEqual(cacheTestOverlayManager.availableOverlays().count, downloadingOverlayManager.availableOverlays().count)
     }
-
     
-
+    override func tearDown() {
+    }
 }
